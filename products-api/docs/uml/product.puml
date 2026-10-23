@@ -29,10 +29,24 @@ class ProductService {
  + addProduct(product : Product) : Product
  + deleteProduct(id : Long) : void
  }
+
+ class DigitalProduct {
+ - downloadUrl : String
+ - fileSizeMB : double
+ + getDownloadUrl() : String
+ }
+ class PhysicalProduct {
+ - weightKg : double
+ - dimensions : String
+ + getWeightKg() : double
+ }
  ' ..> is a dependency: DASHED line, open arrow
  ProductController ..> ProductService
  ' --> is an association: SOLID line
  ProductService --> Product
+ Product <|-- DigitalProduct
+ Product <|-- PhysicalProduct
  @enduml
+
 
 @enduml
